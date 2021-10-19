@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class openDoor : MonoBehaviour
 {
-    public GameObject BlueKey;
-    public GameObject blueDoor;
+    public GameObject Door;
+    public string keyName;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (GameObject.Find("Key 1") == null)
+            if (GameObject.Find(keyName) == null)
             {
-                Destroy(blueDoor);
+                Destroy(Door);
             }
         }
     }
