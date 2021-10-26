@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class mobileHealthController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float playerHealth;
+    [SerializeField]
+    private Text livesText;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHealth()
     {
-        
+        livesText.text = playerHealth.ToString("0");
     }
 }

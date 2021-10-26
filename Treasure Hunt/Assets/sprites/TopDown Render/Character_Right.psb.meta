@@ -112,7 +112,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
+      width: 14
       height: 19
     spriteID: b8441c7885c789c30800000000000000
     internalID: 0
@@ -134,7 +134,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 36
       y: 4
-      width: 16
+      width: 14
       height: 19
     spriteID: 2fe8c7a64cf859f90800000000000000
     internalID: 0
@@ -156,7 +156,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 68
       y: 4
-      width: 16
+      width: 14
       height: 19
     spriteID: 6220dea8bf34b2c30800000000000000
     internalID: 0
@@ -178,7 +178,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 100
       y: 4
-      width: 16
+      width: 14
       height: 19
     spriteID: 42149ea1efdd03d00800000000000000
     internalID: 0

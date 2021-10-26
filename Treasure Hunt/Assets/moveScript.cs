@@ -9,8 +9,6 @@ public class moveScript : MonoBehaviour
     //public SpriteRenderer spriteRenderer;
     private Animator myAnimator;
     // Start is called before the first frame update
-
-
     //private bool isDashButtonDown;
     public float cooldownTimer = 0;
 
@@ -81,7 +79,7 @@ public class moveScript : MonoBehaviour
                 {
                     isDashButtonDown = true;
                 }*/
-                if (Input.GetKeyDown(KeyCode.Space) && cooldownTimer < 0)
+                if (Input.GetKeyDown(KeyCode.Z) && cooldownTimer <= 0)
                 {
                     rollDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
                     rollSpeed = 50f;
@@ -106,7 +104,8 @@ public class moveScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        switch (state) {
+        switch (state) 
+        {
             case State.Normal:
                 /*if (isDashButtonDown)
                 {

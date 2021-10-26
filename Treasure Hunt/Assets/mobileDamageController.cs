@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class mobileDamageController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float spikeDamage;
+    [SerializeField]
+    private mobileHealthController healthController;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Player"))
+        {
+            Damage();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Damage()
     {
-        
+        healthController.playerHealth = healthController.playerHealth - spikeDamage;
+        healthController.UpdateHealth();
+        this.gameObject.SetActive(false);
     }
 }
