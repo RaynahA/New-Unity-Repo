@@ -8,8 +8,12 @@ public class collectCoin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        collectSound.Play();
-        ScoringSystem.theScore += 50;
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            collectSound.Play();
+            ScoringSystem.theScore += 50;
+            Destroy(gameObject);
+        }
+       
     }
 }

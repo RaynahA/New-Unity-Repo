@@ -9,6 +9,7 @@ public class Dialogue : MonoBehaviour
     public Text dialogueText;
     public string dialogue;
     public bool playerInRange;
+    public AudioSource talkSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class Dialogue : MonoBehaviour
             if (dialogueBox.activeInHierarchy)
             {
                 dialogueBox.SetActive(false);
+                talkSound.Play();
             }
             else
             {

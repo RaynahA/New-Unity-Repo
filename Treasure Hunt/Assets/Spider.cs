@@ -34,7 +34,7 @@ public class Spider : Enemy
         
 
         Animate();
-        Debug.Log(target.position);
+        //Debug.Log(target.position);
     }
 
 

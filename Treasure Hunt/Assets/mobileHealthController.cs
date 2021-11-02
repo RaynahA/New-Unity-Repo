@@ -12,5 +12,9 @@ public class mobileHealthController : MonoBehaviour
     public void UpdateHealth()
     {
         livesText.text = playerHealth.ToString("0");
+       
+        Debug.Log(playerHealth);
     }
+
+   
 }

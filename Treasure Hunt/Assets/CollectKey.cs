@@ -8,7 +8,10 @@ public class CollectKey : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        collectSound.Play();
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            collectSound.Play();
+            Destroy(gameObject);
+        }
     }
 }

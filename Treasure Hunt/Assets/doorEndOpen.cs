@@ -6,6 +6,7 @@ public class doorEndOpen : MonoBehaviour
 {
 
     public GameObject wall;
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
