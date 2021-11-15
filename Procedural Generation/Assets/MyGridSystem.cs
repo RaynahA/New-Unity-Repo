@@ -14,6 +14,8 @@ public class MyGridSystem : MonoBehaviour
     public MyBuddy buddyPrefab;
     public int spawnCount;
 
+    public float buddySpeed = 1.0f;
+    public float pauseTime = 0.5f;
 
     private void Start()
     {
@@ -21,7 +23,7 @@ public class MyGridSystem : MonoBehaviour
         DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
         r = new System.Random((int)(DateTime.Now - epochStart).TotalSeconds);
 
-        for(int i = 0; i < spawnCount; i++)
+        for (int i = 0; i < spawnCount; i++)
         {
             MyBuddy b = Instantiate(buddyPrefab, GetRandomLocation(), Quaternion.identity);
         }
@@ -29,22 +31,28 @@ public class MyGridSystem : MonoBehaviour
 
     void DrawGrid()
     {
-        float startX = ((-columns / 2.0f * cellSize) )+ (cellSize / 2.0f);
-        float startY = ((-columns / 2.0f * cellSize)) + (cellSize / 2.0f);
 
-        for(int i = 0; i < rows; i++)
+        float startX = ((-columns / 2.0f) * cellSize) + (cellSize / 2.0f);
+        float startY = ((-rows / 2.0f) * cellSize) + (cellSize / 2.0f);
+
+        for (int i = 0; i < rows; i++)
         {
-            for(int j = 0; j < columns; j++)
-            {
-                gridCellList.Add(new GridCell(
+            Debug.Log($"Hello Row {i}");
 
-                    startX + (j * cellSize),
-                    startY + (i * cellSize)
-                    )
-                    );
+            for (int j = 0; j < columns; j++)
+            {
+
+                gridCellList.Add(new GridCell(
+                            startX + (j * cellSize),
+                            startY + (i * cellSize)
+                            )
+                           );
             }
+
         }
+
     }
+
 
     public Vector2 GetRandomLocation()
     {
@@ -53,26 +61,29 @@ public class MyGridSystem : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        for(int i = 0; i < gridCellList.Count; i++)
+        for (int i = 0; i < gridCellList.Count; i++)
         {
             Gizmos.DrawWireCube(gridCellList[i].location, Vector2.one * cellSize);
         }
     }
+
 
 }
 
 [System.Serializable]
 public class GridCell
 {
+
     public Vector2 location;
+
     public GridCell() { }
-    public GridCell(Vector2 l) 
+    public GridCell(Vector2 l)
     {
         location = new Vector2(l.x, l.y);
     }
-
     public GridCell(float x, float y)
     {
         location = new Vector2(x, y);
     }
+
 }
